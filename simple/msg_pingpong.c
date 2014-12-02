@@ -374,7 +374,7 @@ static int server_connect(void)
 	if (ret)
 		goto err3;
 
-	ret = fi_accept(ep, NULL, 0);
+	ret = fi_accept(ep, info->connreq, NULL, 0);
 	if (ret) {
 		printf("fi_accept %s\n", fi_strerror(-ret));
 		goto err3;
